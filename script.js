@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- SECTION 1: CINEMATIC OPENING (GSAP) ---
-    // Hide body scroll during cinematic intro
-    document.body.style.overflowY = "hidden";
+    // Scroll is fully allowed at all times so refresh does not lock navigation.
+    document.body.style.overflowY = "auto";
 
     const lines = [
         document.getElementById("line-1"),
@@ -143,12 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     const heroCta = document.getElementById("heroCta");
 
-    const introTl = gsap.timeline({
-        onComplete: () => {
-            // Restore scroll once intro finishes
-            document.body.style.overflowY = "auto";
-        }
-    });
+    const introTl = gsap.timeline();
 
     // 1. Line 1: Hey Beta... ❤️
     introTl.set(lines[0], { display: "block" })
@@ -199,15 +194,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fade up headers, cards, and specific items on scroll
     gsap.utils.toArray(".fade-up").forEach((el) => {
         gsap.fromTo(el, 
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 35 },
             { 
                 opacity: 1, 
                 y: 0, 
-                duration: 1.2, 
-                ease: "power3.out",
+                duration: 1.5, 
+                ease: "power4.out",
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 85%",
+                    start: "top 90%",
                     toggleActions: "play none none none"
                 }
             }
