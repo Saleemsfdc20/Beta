@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isPlaying = false;
 
-    // Soft volume
-    bgMusic.volume = 0.4;
+    // Soft volume (reduced for gentle background ambience)
+    bgMusic.volume = 0.25;
 
     musicToggle.addEventListener("click", () => {
         if (isPlaying) {

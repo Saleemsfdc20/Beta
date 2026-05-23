@@ -85,8 +85,8 @@ body {
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.45;
-    mix-blend-mode: multiply;
+    opacity: 0.35;
+    will-change: transform;
     animation: orbFloat 25s infinite alternate ease-in-out;
 }
 
@@ -442,6 +442,7 @@ h1.typewriter-line {
     box-shadow: var(--glass-shadow);
     transform: rotate(-1.5deg);
     transition: var(--transition-bounce);
+    will-change: transform;
     cursor: pointer;
     max-width: 440px;
     position: relative;
